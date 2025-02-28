@@ -26,6 +26,7 @@ st.markdown(f"<p style='font-size: 12px;'>Cantidad de destinos seleccionados: {c
 libre_disponibilidad = st.selectbox("2️⃣ Desea Libre disponibilidad adicional", [opcion_vacia] + list(df_questions['Desea Libre disponibilidad adicional'].dropna().unique()))
 compra_deuda = st.selectbox("3️⃣ Se comprará deuda con garantía hipotecaria", [opcion_vacia] + list(df_questions['Se comprará deuda con garantía hipotecaria de inversionista privado'].dropna().unique()))
 
+
 # Cambiar número a texto para que aparezca vacío inicialmente
 monto = st.text_input("4️⃣ Indique monto (en soles)", placeholder="Ingrese el monto")
 plazo = st.text_input("5️⃣ Indique plazo (en meses)", placeholder="Ingrese el plazo")
