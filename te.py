@@ -10,7 +10,7 @@ df_questions = pd.read_excel(file_path, sheet_name='Hoja2')   # Preguntas del fo
 df_conditions.rename(columns=lambda x: x.strip(), inplace=True)
 
 # Título del formulario
-st.title("Formulario de Evaluación Flexible")
+st.title("Formulario tipo de Evaluación")
 
 # Opción vacía
 opcion_vacia = "Seleccionar"
@@ -32,7 +32,7 @@ plazo = st.text_input("5️⃣ Indique plazo (en meses)", placeholder="Ingrese e
 edad = st.text_input("6️⃣ Indique edad", placeholder="Ingrese la edad")
 
 sustento_ingresos = st.selectbox("7️⃣ Tiene sustentos de ingresos", [opcion_vacia] + list(df_questions['Tiene sustentos de ingresos'].dropna().unique()))
-calificacion = st.selectbox("8️⃣ Peor calificación", [opcion_vacia] + list(df_questions['PEOR CALIFICACIÓN'].dropna().unique()))
+calificacion = st.selectbox("8️⃣ Peor calificación últimos 5 años", [opcion_vacia] + list(df_questions['PEOR CALIFICACIÓN'].dropna().unique()))
 propiedad_garante = st.selectbox("9️⃣ Propiedad de garante", [opcion_vacia] + list(df_questions['Propiedad de garante'].dropna().unique()))
 zonas_opciones = df_questions['Zonas admitidas'].dropna().unique().tolist()
 if not zonas_opciones:  # Si la lista está vacía, agregar solo la opción vacía
